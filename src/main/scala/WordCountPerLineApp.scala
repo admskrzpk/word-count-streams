@@ -12,7 +12,6 @@ object WordCountPerLineApp extends App {
     .flatMapValues {_.split("\\W+")}
     .groupBy { case (_, value) => value }
     .count
-    //opcjonalnie
     .mapValues(_.toString)
     .toStream
     .to("bye")
