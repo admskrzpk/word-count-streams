@@ -1,24 +1,13 @@
 object WordCountPerLineApp extends App {
 
   import org.apache.kafka.common.serialization.Serdes
-  import org.apache.kafka.streams.kstream.{Materialized, Produced}
   import org.apache.kafka.streams.scala.ImplicitConversions._
-  import org.apache.kafka.streams.state.KeyValueStore
+  import org.apache.kafka.streams.scala._
+  import org.apache.kafka.streams.scala.kstream._
   import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
-  import java.util
-  import java.util.{Locale, Properties}
-  import java.util.concurrent.CountDownLatch
-  import org.apache.kafka.streams.scala._
-  import org.apache.kafka.streams.scala.kstream._
-  import org.apache.kafka.streams.scala._
-  import ImplicitConversions._
   import serialization.Serdes._
-  import org.apache.kafka.streams.scala.kstream._
-  import org.apache.kafka.streams.kstream.Materialized
-  import org.apache.kafka.streams.scala.ImplicitConversions._
-  import org.apache.kafka.streams.scala._
-  import org.apache.kafka.streams.scala.kstream._
-  import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
+  import java.util.Properties
+  import java.util.concurrent.CountDownLatch
 
   val props = new Properties()
   props.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordCountPerLineAPP")
